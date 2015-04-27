@@ -4,24 +4,32 @@
 body{
 	padding-top: 40px;
 }
+.admin{
+	display:none;
+}
+.content{
+width:27%;
+}
+.field{
+	margin-bottom: 15px;
+}
 .status{
 	border-bottom:solid 1px #CCC;
 }
 .status p{
 	margin: 0px 0;
 }
-.admin{
-	display:none;
-}
+
 .status:hover .admin{
 	display:inline-block;
 } .btn{
   margin-top: -10px;
   margin-bottom: 15px;
 }
-.content{
-width:27%;
+.well{
+	width:400px
 }
+
 #notice{
 	margin-top:8px;
 }
