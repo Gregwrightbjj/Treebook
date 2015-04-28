@@ -13095,3 +13095,620 @@ Processing by RegistrationsController#create as HTML
   Rendered devise/shared/_links.html.erb (1.6ms)
   Rendered devise/registrations/new.html.erb within layouts/application (7.0ms)
 Completed 200 OK in 122ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2015-04-28 15:04:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"05bsFapLe4o4h1QWrls2m6hHY11f1YpIeCd9kiUbJjhPFBubZte55V/pnshXd2hQ6rudiBTI3UQLVKZrdtHj5w==", "user"=>{"first_name"=>"Leila", "last_name"=>"Wright", "profile_name"=>"Leila", "email"=>"leilabjj@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'leilabjj@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."profile_name" = 'Leila' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 378ms (Views: 251.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users" for ::1 at 2015-04-28 15:21:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dY1VXFPeYvUb+o5c56224Ast2xOChyLbrHqriWAiy1fpD6LSn0KgmnyURIIegegrSdElxsmaddffCXBwM+gOiA==", "user"=>{"first_name"=>"Leila", "last_name"=>"Wright", "profile_name"=>"Leila", "email"=>"leilabjj@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'leilabjj@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."profile_name" = 'Leila' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "profile_name", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Leila"], ["last_name", "Wright"], ["profile_name", "Leila"], ["email", "leilabjj@gmail.com"], ["encrypted_password", "$2a$10$X5ZQXp2.7OrDRg1ZlmpU5uSyXbUfO1WDUF3Y0qvoWho8TuMY4wd5i"], ["created_at", "2015-04-28 19:21:00.916316"], ["updated_at", "2015-04-28 19:21:00.916316"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-04-28 19:21:00.928927"], ["current_sign_in_at", "2015-04-28 19:21:00.928927"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2015-04-28 19:21:00.929869"], ["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 147ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2015-04-28 15:21:00 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.4ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 203ms (Views: 197.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/statuses/new" for ::1 at 2015-04-28 15:21:09 -0400
+Processing by StatusesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered statuses/_form.html.erb (53.3ms)
+  Rendered statuses/new.html.erb within layouts/application (58.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 108ms (Views: 104.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/statuses" for ::1 at 2015-04-28 15:21:21 -0400
+Processing by StatusesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lm2Qty35I8AIhfc2IqRgbARhc3JQiw43qAHoCJEeHnoK72c54WXhr2/rPejbiD6nRp2NpxuWWTvbcjPxwtTbpQ==", "status"=>{"user_id"=>"", "content"=>"wow that was cool"}, "commit"=>"Create Status"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "statuses" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "wow that was cool"], ["created_at", "2015-04-28 19:21:21.364882"], ["updated_at", "2015-04-28 19:21:21.364882"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/statuses/1
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/statuses/1" for ::1 at 2015-04-28 15:21:21 -0400
+Processing by StatusesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/show.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Name:</strong>
+    5:   <%= @status.user.full_name %> 
+    6: </p>
+    7: 
+    8: <p>
+  app/views/statuses/show.html.erb:5:in `_app_views_statuses_show_html_erb__4137812756880375663_70166101939040'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.6ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (47.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (107.8ms)
+
+
+Started POST "/statuses" for ::1 at 2015-04-28 15:21:31 -0400
+Processing by StatusesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PTKCauLUuN/94b1R6j4urG6OwpbNd738pZjT/951esmhsHXkLkh6sJqPd48TEnBnLHI8Q4Zq6vDW6wgGjb+/Fg==", "status"=>{"user_id"=>"1", "content"=>"wow that was cool"}, "commit"=>"Create Status"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "statuses" ("user_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["content", "wow that was cool"], ["created_at", "2015-04-28 19:21:31.818763"], ["updated_at", "2015-04-28 19:21:31.818763"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/statuses/2
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/statuses/2" for ::1 at 2015-04-28 15:21:31 -0400
+Processing by StatusesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered statuses/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 15:21:33 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+     5:     <%= link_to "Post a New Status", new_status_path, class:"btn btn-success" %>
+     6:     <% @statuses.each do |status| %>
+     7:       <div class="status">
+     8:         <strong><%= status.user.full_name %></strong>
+     9:         <p><%= status.content %></p>
+    10:         <div class="meta">
+    11:            <%= link_to time_ago_in_words(status.created_at) + " ago" , status %> |
+  app/views/statuses/index.html.erb:8:in `block in _app_views_statuses_index_html_erb___2585068834265960655_70166102083520'
+  app/views/statuses/index.html.erb:6:in `_app_views_statuses_index_html_erb___2585068834265960655_70166102083520'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.7ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.9ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (88.1ms)
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 15:21:34 -0400
+Processing by StatusesController#index as HTML
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT "statuses".* FROM "statuses"[0m
+  Rendered statuses/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+     5:     <%= link_to "Post a New Status", new_status_path, class:"btn btn-success" %>
+     6:     <% @statuses.each do |status| %>
+     7:       <div class="status">
+     8:         <strong><%= status.user.full_name %></strong>
+     9:         <p><%= status.content %></p>
+    10:         <div class="meta">
+    11:            <%= link_to time_ago_in_words(status.created_at) + " ago" , status %> |
+  app/views/statuses/index.html.erb:8:in `block in _app_views_statuses_index_html_erb___2585068834265960655_70166051677140'
+  app/views/statuses/index.html.erb:6:in `_app_views_statuses_index_html_erb___2585068834265960655_70166051677140'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.6ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (43.6ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (91.9ms)
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 15:21:46 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+     5:     <%= link_to "Post a New Status", new_status_path, class:"btn btn-success" %>
+     6:     <% @statuses.each do |status| %>
+     7:       <div class="status">
+     8:         <strong><%= status.user.full_name %></strong>
+     9:         <p><%= status.content %></p>
+    10:         <div class="meta">
+    11:            <%= link_to time_ago_in_words(status.created_at) + " ago" , status %> |
+  app/views/statuses/index.html.erb:8:in `block in _app_views_statuses_index_html_erb___2585068834265960655_70166102083520'
+  app/views/statuses/index.html.erb:6:in `_app_views_statuses_index_html_erb___2585068834265960655_70166102083520'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.9ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (43.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (93.9ms)
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 15:21:46 -0400
+Processing by StatusesController#index as HTML
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT "statuses".* FROM "statuses"[0m
+  Rendered statuses/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+     5:     <%= link_to "Post a New Status", new_status_path, class:"btn btn-success" %>
+     6:     <% @statuses.each do |status| %>
+     7:       <div class="status">
+     8:         <strong><%= status.user.full_name %></strong>
+     9:         <p><%= status.content %></p>
+    10:         <div class="meta">
+    11:            <%= link_to time_ago_in_words(status.created_at) + " ago" , status %> |
+  app/views/statuses/index.html.erb:8:in `block in _app_views_statuses_index_html_erb___2585068834265960655_70166051677140'
+  app/views/statuses/index.html.erb:6:in `_app_views_statuses_index_html_erb___2585068834265960655_70166051677140'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.8ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (44.0ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (98.0ms)
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 15:28:08 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `user' for nil:NilClass):
+     5:     <%= link_to "Post a New Status", new_status_path, class:"btn btn-success" %>
+     6:     <% @statuses.each do |status| %>
+     7:       <div class="status">
+     8:         <strong><%= @status.user.full_name %></strong>
+     9:         <p><%= status.content %></p>
+    10:         <div class="meta">
+    11:            <%= link_to time_ago_in_words(status.created_at) + " ago" , status %> |
+  app/views/statuses/index.html.erb:8:in `block in _app_views_statuses_index_html_erb___2585068834265960655_70166053039340'
+  app/views/statuses/index.html.erb:6:in `_app_views_statuses_index_html_erb___2585068834265960655_70166053039340'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.0ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (86.5ms)
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 15:28:31 -0400
+Processing by StatusesController#index as HTML
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT "statuses".* FROM "statuses"[0m
+  Rendered statuses/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+     5:     <%= link_to "Post a New Status", new_status_path, class:"btn btn-success" %>
+     6:     <% @statuses.each do |status| %>
+     7:       <div class="status">
+     8:         <strong><%= status.user.full_name %></strong>
+     9:         <p><%= status.content %></p>
+    10:         <div class="meta">
+    11:            <%= link_to time_ago_in_words(status.created_at) + " ago" , status %> |
+  app/views/statuses/index.html.erb:8:in `block in _app_views_statuses_index_html_erb___2585068834265960655_70166102730980'
+  app/views/statuses/index.html.erb:6:in `_app_views_statuses_index_html_erb___2585068834265960655_70166102730980'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.7ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (49.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (104.5ms)
+
+
+Started GET "/" for ::1 at 2015-04-28 15:28:36 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+     5:     <%= link_to "Post a New Status", new_status_path, class:"btn btn-success" %>
+     6:     <% @statuses.each do |status| %>
+     7:       <div class="status">
+     8:         <strong><%= status.user.full_name %></strong>
+     9:         <p><%= status.content %></p>
+    10:         <div class="meta">
+    11:            <%= link_to time_ago_in_words(status.created_at) + " ago" , status %> |
+  app/views/statuses/index.html.erb:8:in `block in _app_views_statuses_index_html_erb___2585068834265960655_70166110011480'
+  app/views/statuses/index.html.erb:6:in `_app_views_statuses_index_html_erb___2585068834265960655_70166110011480'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.0ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (87.1ms)
+
+
+Started GET "/" for ::1 at 2015-04-28 15:28:36 -0400
+Processing by StatusesController#index as HTML
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT "statuses".* FROM "statuses"[0m
+  Rendered statuses/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+     5:     <%= link_to "Post a New Status", new_status_path, class:"btn btn-success" %>
+     6:     <% @statuses.each do |status| %>
+     7:       <div class="status">
+     8:         <strong><%= status.user.full_name %></strong>
+     9:         <p><%= status.content %></p>
+    10:         <div class="meta">
+    11:            <%= link_to time_ago_in_words(status.created_at) + " ago" , status %> |
+  app/views/statuses/index.html.erb:8:in `block in _app_views_statuses_index_html_erb___2585068834265960655_70166102730980'
+  app/views/statuses/index.html.erb:6:in `_app_views_statuses_index_html_erb___2585068834265960655_70166102730980'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (43.6ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (102.9ms)
+
+
+Started GET "/users" for ::1 at 2015-04-28 15:28:37 -0400
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.6ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (48.6ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (99.6ms)
+
+
+Started GET "/" for ::1 at 2015-04-28 15:28:39 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+     5:     <%= link_to "Post a New Status", new_status_path, class:"btn btn-success" %>
+     6:     <% @statuses.each do |status| %>
+     7:       <div class="status">
+     8:         <strong><%= status.user.full_name %></strong>
+     9:         <p><%= status.content %></p>
+    10:         <div class="meta">
+    11:            <%= link_to time_ago_in_words(status.created_at) + " ago" , status %> |
+  app/views/statuses/index.html.erb:8:in `block in _app_views_statuses_index_html_erb___2585068834265960655_70166102730980'
+  app/views/statuses/index.html.erb:6:in `_app_views_statuses_index_html_erb___2585068834265960655_70166102730980'
+
+
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.1ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.4ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/gregwright/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (94.1ms)
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "statuses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX "index_statuses_on_user_id" ON "statuses" ("user_id")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "profile_name" varchar, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150421190001')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150421163126')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150421181632')[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "statuses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  CREATE  INDEX "index_statuses_on_user_id" ON "statuses" ("user_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "profile_name" varchar, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150421190001')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150421163126')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150421181632')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "statuses".* FROM "statuses"
+
+
+Started GET "/" for ::1 at 2015-04-28 15:49:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.4ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 272ms (Views: 253.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-28 15:49:57 -0400
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 109ms (Views: 97.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-04-28 15:50:25 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFUY059Qf95sWXjLKnyPz7TzD0isZT8oNqTePuIeKoTs1+9dU8y9sQs3shXTUNEE9g/xned4aCRF1wXHsdTvWw==", "user"=>{"first_name"=>"matt", "last_name"=>"wright", "profile_name"=>"matty", "email"=>"mattwrightbjj@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mattwrightbjj@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."profile_name" = 'matty' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "profile_name", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "matt"], ["last_name", "wright"], ["profile_name", "matty"], ["email", "mattwrightbjj@gmail.com"], ["encrypted_password", "$2a$10$srvNpnNKwyTGZqt5eGkPkeUPIAv4QxbrwFrgSezFtDbmDmphWhhDS"], ["created_at", "2015-04-28 19:50:25.804916"], ["updated_at", "2015-04-28 19:50:25.804916"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-04-28 19:50:25.808460"], ["current_sign_in_at", "2015-04-28 19:50:25.808460"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2015-04-28 19:50:25.809926"], ["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2015-04-28 15:50:25 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-04-28 15:50:54 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "statuses".* FROM "statuses"
+  Rendered statuses/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 27ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.self-8c0a18ef497d6248739c038ca99120e435b9d0ac33120bf065cd090558f70e73.css?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/assets/statuses.self-f281c0efd6474a7dd3897700004fb9ff02d19fc57ff8010fe6e6e7e738b05f5a.css?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/assets/statuses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2015-04-28 15:50:54 -0400
+
+
+Started GET "/statuses/new" for ::1 at 2015-04-28 15:50:57 -0400
+Processing by StatusesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered statuses/_form.html.erb (42.4ms)
+  Rendered statuses/new.html.erb within layouts/application (44.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 71ms (Views: 68.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/statuses" for ::1 at 2015-04-28 15:51:06 -0400
+Processing by StatusesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pL++UqlpHvDMWTewyY3nivBdFQOfgSHFiB3pbJLJdyI4PUncZfXcn6s3/W4woblBsqHr1tScdsn7bjKVwQOy/Q==", "status"=>{"user_id"=>"1", "content"=>"hello"}, "commit"=>"Create Status"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "statuses" ("user_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["content", "hello"], ["created_at", "2015-04-28 19:51:06.295226"], ["updated_at", "2015-04-28 19:51:06.295226"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/statuses/1
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/statuses/1" for ::1 at 2015-04-28 15:51:06 -0400
+Processing by StatusesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered statuses/show.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 15:51:08 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "statuses".* FROM "statuses"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/statuses/1" for ::1 at 2015-04-28 15:58:14 -0400
+Processing by StatusesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStatus Load (0.1ms)[0m  [1mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered statuses/show.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 54ms (Views: 36.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 15:58:17 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "statuses".* FROM "statuses"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/index.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.4ms)
