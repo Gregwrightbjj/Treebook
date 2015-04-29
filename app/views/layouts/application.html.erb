@@ -37,19 +37,13 @@
     </nav>
 
 <div class="container">
-
-  <% if flash[:notice]%>
-    <div class="alert alert-success">
+  <% flash.each do |type,message| %>
+    <div class="alert <%= flash_class (type.to_s) %>">
       <a href="#" class="close" data-dismiss="alert">&times;</a>
-      <%= flash[:notice] %>
+      <%= message %>
     </div>
   <%end%>
-  <% if flash[:alert]%>
-    <div class="alert alert-danger alert-error">
-      <a href="#" class="close" data-dismiss="alert">&times;</a>
-      <%= flash[:alert] %>
-    </div>
-  <%end%>
+  
 <%= yield %>
 </div>
 

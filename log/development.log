@@ -14627,3 +14627,379 @@ Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 20:54:05 -0400
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 21:10:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "statuses".* FROM "statuses"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/index.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 261ms (Views: 243.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.self-8c0a18ef497d6248739c038ca99120e435b9d0ac33120bf065cd090558f70e73.css?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/statuses.self-a53860c72117e3a185881c76b35fe27413b2abb91774e91afcb58cdaa3c3acb2.css?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/statuses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:10:32 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-28 21:10:40 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (102.8ms)
+Completed 200 OK in 141ms (Views: 138.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-28 21:10:43 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r031g7k0+ldgo6fPUjB1Txu0/0NUIX4p4UB4YwxbCIdCKAItK8uCykFERj3i0z5t7gei6PsUmtA9tbsM4jNVKg==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r031g7k0+ldgo6fPUjB1Txu0/0NUIX4p4UB4YwxbCIdCKAItK8uCykFERj3i0z5t7gei6PsUmtA9tbsM4jNVKg==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:10:43 -0400
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 21:35:03 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "statuses".* FROM "statuses"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 51ms (Views: 45.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:35:03 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-28 21:35:06 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-28 21:35:10 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"90Whx6GBwzbpZOD2JMMzoQ3Omzf3/L4oonb0yT0NuI4aIFZpM367q8iDAQSUIHiD+H3GnFjJWtF+gzem02XlIw==", "user"=>{"email"=>"n", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"90Whx6GBwzbpZOD2JMMzoQ3Omzf3/L4oonb0yT0NuI4aIFZpM367q8iDAQSUIHiD+H3GnFjJWtF+gzem02XlIw==", "user"=>{"email"=>"n", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 35ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:35:10 -0400
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 21:36:38 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.2ms)[0m  SELECT "statuses".* FROM "statuses"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 43ms (Views: 37.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:36:38 -0400
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 21:36:39 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.1ms)[0m  SELECT "statuses".* FROM "statuses"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.self-8c0a18ef497d6248739c038ca99120e435b9d0ac33120bf065cd090558f70e73.css?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/statuses.self-a53860c72117e3a185881c76b35fe27413b2abb91774e91afcb58cdaa3c3acb2.css?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/statuses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:36:39 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-28 21:36:42 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-28 21:36:43 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lFW/NirKbx3TBRWm69yhK3+oNfDQqjom+cyio91yyyx5MEiYuDUXgPLi9FRbP+oJihtoW3+f3t8lOWHMMxqWgQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lFW/NirKbx3TBRWm69yhK3+oNfDQqjom+cyio91yyyx5MEiYuDUXgPLi9FRbP+oJihtoW3+f3t8lOWHMMxqWgQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:36:44 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-28 21:37:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 39ms (Views: 32.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:37:37 -0400
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-28 21:37:38 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnfcZuBHJ5HmIpeiG6U4NtAJQ/i+l47ta6yAoWjRKGwvEivIcrhfDMfFdlCrRnMUJboeUxGiahS3WUPOhrl1wQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnfcZuBHJ5HmIpeiG6U4NtAJQ/i+l47ta6yAoWjRKGwvEivIcrhfDMfFdlCrRnMUJboeUxGiahS3WUPOhrl1wQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:37:39 -0400
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 21:41:49 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.3ms)[0m  SELECT "statuses".* FROM "statuses"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 51ms (Views: 44.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:41:49 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-28 21:41:51 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-28 21:41:52 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FQOzE1JrBhOiDONi0YgbdPPRMfjlPn26+cOEIs3hJaT4ZkS9wJR+joPrApBha1BWBmJsU0oLmUMlNkdNI4l4CQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FQOzE1JrBhOiDONi0YgbdPPRMfjlPn26+cOEIs3hJaT4ZkS9wJR+joPrApBha1BWBmJsU0oLmUMlNkdNI4l4CQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:41:53 -0400
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 21:43:08 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.3ms)[0m  SELECT "statuses".* FROM "statuses"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 50ms (Views: 45.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:43:08 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-28 21:43:10 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-28 21:43:12 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AtpbJRZVnVD6kkjy3WR7q2Jufi5/JWG4NLrwoBHSYyLvv6yLhKrlzdt1qQBthzCJl90jhdAQhUHoTzPP/7o+jw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AtpbJRZVnVD6kkjy3WR7q2Jufi5/JWG4NLrwoBHSYyLvv6yLhKrlzdt1qQBthzCJl90jhdAQhUHoTzPP/7o+jw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:43:12 -0400
+
+
+Started GET "/statuses" for ::1 at 2015-04-28 21:43:33 -0400
+Processing by StatusesController#index as HTML
+  [1m[35mStatus Load (0.3ms)[0m  SELECT "statuses".* FROM "statuses"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered statuses/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 42ms (Views: 37.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:43:33 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-28 21:43:35 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-28 21:43:36 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wl7H9kjNafQTkM/wTlK/JHGmofQtwZe34B1kW/RVmX23OzBY2jIRaTJ3LgL+sfQGhBX8X4L0c0486Kc0Gj3E0A==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wl7H9kjNafQTkM/wTlK/JHGmofQtwZe34B1kW/RVmX23OzBY2jIRaTJ3LgL+sfQGhBX8X4L0c0486Kc0Gj3E0A==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:43:36 -0400
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-28 21:48:28 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wl7H9kjNafQTkM/wTlK/JHGmofQtwZe34B1kW/RVmX23OzBY2jIRaTJ3LgL+sfQGhBX8X4L0c0486Kc0Gj3E0A==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wl7H9kjNafQTkM/wTlK/JHGmofQtwZe34B1kW/RVmX23OzBY2jIRaTJ3LgL+sfQGhBX8X4L0c0486Kc0Gj3E0A==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 93ms (Views: 91.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/statuses.self-f8d2944ea73e2ba98498974f995c2cb739740939860efd71c78c6b6c7baa6553.css?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/bootstrap.self-8c0a18ef497d6248739c038ca99120e435b9d0ac33120bf065cd090558f70e73.css?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/statuses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:48:28 -0400
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-28 21:48:38 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wl7H9kjNafQTkM/wTlK/JHGmofQtwZe34B1kW/RVmX23OzBY2jIRaTJ3LgL+sfQGhBX8X4L0c0486Kc0Gj3E0A==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wl7H9kjNafQTkM/wTlK/JHGmofQtwZe34B1kW/RVmX23OzBY2jIRaTJ3LgL+sfQGhBX8X4L0c0486Kc0Gj3E0A==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 94ms (Views: 93.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/statuses.self-a7b23f7304c395d639f237b77ea89430ffd3ef2b9877e41f4cd68ccd402cf695.css?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/bootstrap.self-8c0a18ef497d6248739c038ca99120e435b9d0ac33120bf065cd090558f70e73.css?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/statuses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2015-04-28 21:48:38 -0400
+
+
+Started GET "/assets/bootstrap.css.map" for ::1 at 2015-04-28 21:48:38 -0400
