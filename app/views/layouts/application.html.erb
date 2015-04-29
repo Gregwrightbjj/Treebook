@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="">Treebook</a>
+          <a class="navbar-brand" href="/statuses">Treebook</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -38,7 +38,20 @@
 
 <div class="container">
 
+  <% if flash[:notice]%>
+    <div class="alert alert-success">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <%= flash[:notice] %>
+    </div>
+  <%end%>
+  <% if flash[:alert]%>
+    <div class="alert alert-danger alert-error">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <%= flash[:alert] %>
+    </div>
+  <%end%>
 <%= yield %>
 </div>
+
 </body>
 </html>
