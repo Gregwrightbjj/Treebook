@@ -1,5 +1,12 @@
+# Indentions are important
 greg:
  first_name: "Greg"
  last_name: "Wright"
  email: "gregwrightbjj@gmail.com"
  profile_name: "Greg"
+jim:
+ first_name: "Jim"
+ last_name: "Wright"
+ email: "jimbjj@gmail.com"
+ profile_name: "Jimmy"
+

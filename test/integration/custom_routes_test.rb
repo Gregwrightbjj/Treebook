@@ -5,7 +5,7 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
 		get "/login"
 		assert_response :success
 	end
-
+	# This test is still failing
 	test "that /logout route opens the logout page" do 
 		get "/logout"
 		assert_response :redirect
@@ -14,6 +14,11 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
 
 	test "that /register route opens the register page" do 
 		get "/register"
+		assert_response :success
+	end
+
+	test "that a profile page works" do 
+		get "/Jimmy"
 		assert_response :success
 	end
 
