@@ -13,6 +13,9 @@ body{
 .content{
 width:27%;
 }
+.col-md-1 img{
+	margin-bottom: 6px;
+}
 .field{
 	margin-bottom: 15px;
 }
@@ -21,6 +24,7 @@ width:27%;
 }
 .status{
 	border-bottom:solid 1px #CCC;
+	 margin-bottom: 6px;
 }
 .status p{
 	margin: 0px 0;
