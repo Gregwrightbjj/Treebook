@@ -1,4 +1,4 @@
-#First attempt at rails
+#First attempt at rails.
 https://treebooke.herokuapp.com/statuses
 
 Learned how to:
